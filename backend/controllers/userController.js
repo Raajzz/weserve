@@ -1,8 +1,10 @@
+const { User } = require("../models/UserModel");
+
 const getAllUsers = (req, res, next) => {
-  res.status(200).json({
+	res.status(200).json({
 		msg: "getAllUsers",
 	});
-}
+};
 
 const getUser = (req, res, next) => {
 	res.status(200).json({
@@ -16,10 +18,19 @@ const editUser = (req, res, next) => {
 	});
 };
 
-const registerUser = (req, res, next) => {
-	res.status(200).json({
-		msg: "registerUser",
-	});
+const registerUser = async (req, res, next) => {
+	try {
+		const user = await User.create(req.body);
+		res.status(200).json({
+			success: true,
+			user,
+		});
+	} catch (error) {
+		res.json({
+			success: false,
+			message: error,
+		});
+	}
 };
 
 const deleteUser = (req, res, next) => {
@@ -29,7 +40,7 @@ const deleteUser = (req, res, next) => {
 };
 
 module.exports = {
-  getAllUsers,
+	getAllUsers,
 	getUser,
 	editUser,
 	registerUser,

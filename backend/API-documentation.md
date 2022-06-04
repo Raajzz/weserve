@@ -29,3 +29,7 @@ GET `/api/v1/search/:role/:radius`
   - 10KM
   - 15KM
   - 20KM
+
+NOTES
+
+Now, we're gonna be creating multiple collections for each of the different blue-collar services that are going to be provided. This can be done by 
