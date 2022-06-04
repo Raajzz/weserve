@@ -3,7 +3,7 @@ const app = express()
 
 const PORT = process.env.PORT || 5000;
 
-app.get("/", (req, res)=>{
+app.get("/api/v1", (req, res)=>{
   res.status(200).json({
     success: true,
     message: "GET request successful"
