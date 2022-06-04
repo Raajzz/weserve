@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const validator_ = require("validator");
 
+// password field needs to be added
 const serviceSchema = new mongoose.Schema({
 	userName: {
 		type: String,
@@ -74,7 +75,22 @@ const serviceSchema = new mongoose.Schema({
 			required: true,
 		},
 	},
-	servicesProvided: {},
+	serviceImages: [
+    {
+      public_id: {
+        type: String,
+        required: true,
+      },
+      url: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
 });
 
-module.exports = mongoose.model("ServiceTemp", serviceSchema);
+module.exports.Electrician = mongoose.model("Electrician", serviceSchema);
+module.exports.Plumber = mongoose.model("Plumber", serviceSchema);
+module.exports.Carpenter = mongoose.model("Carpenter", serviceSchema);
+module.exports.Painter = mongoose.model("Painter", serviceSchema);
+module.exports.TvRepair = mongoose.model("TvRepair", serviceSchema);

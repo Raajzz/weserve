@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 
+// password field needs to be added
 const userSchema = new mongoose.Schema({
 	userName: {
 		type: String,
@@ -77,3 +78,4 @@ const userSchema = new mongoose.Schema({
 });
 
 module.exports.User = mongoose.model("User", userSchema);
+module.exports.User2 = mongoose.model("User2", userSchema);

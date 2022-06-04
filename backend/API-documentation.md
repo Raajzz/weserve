@@ -32,4 +32,5 @@ GET `/api/v1/search/:role/:radius`
 
 NOTES
 
-Now, we're gonna be creating multiple collections for each of the different blue-collar services that are going to be provided. This can be done by 
+Now, we're gonna be creating multiple collections for each of the different blue-collar services that are going to be provided. This can be done by using another async function which again calls this await function.
+Also, we do understand the process of user data duplication, as we're just trying to provide a prototype we'll carry on with the following, in the future we'll prevent data duplication.

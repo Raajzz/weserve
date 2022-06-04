@@ -5,7 +5,8 @@ const userRoutes = require("./routes/userRoutes")
 const serviceRoutes = require("./routes/serviceRoutes")
 const searchRoutes = require("./routes/searchRoutes")
 const mongooseConnect = require("./db/connect");
-const Temp = require("./trash/tempPostRequest");
+
+const UserName = require("./models/UserNameModel");
 
 app.use(express.json());
 app.use("/api/v1/user", userRoutes);

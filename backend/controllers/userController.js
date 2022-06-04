@@ -1,4 +1,4 @@
-const { User } = require("../models/UserModel");
+const { User2 } = require("../models/UserModel");
 
 const getAllUsers = (req, res, next) => {
 	res.status(200).json({
@@ -20,7 +20,7 @@ const editUser = (req, res, next) => {
 
 const registerUser = async (req, res, next) => {
 	try {
-		const user = await User.create(req.body);
+		const user = await User2.create(req.body);
 		res.status(200).json({
 			success: true,
 			user,
