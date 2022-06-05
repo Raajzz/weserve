@@ -7,4 +7,5 @@ const TempSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model("Temp", TempSchema)
+const Temp = mongoose.model("Temp", TempSchema);
+

@@ -1,45 +1,40 @@
 USER
 
 GET `/api/v1/user/alldetails`
+  -> To get all the user details
 GET `/api/v1/user/details/:username`
+  -> To get the details of a particular user
 POST `/api/v1/user/register`
+  -> To add a new user
 PATCH `/api/v1/user/edit/:username`
+  -> To edit the details of a user
 DELETE `/api/v1/user/delete/:username`
+  -> To delete the details of a user
 
 SERVICE
 
+GET `/api/v1/service/alldetails`
+  -> To get all the service details
 GET `/api/v1/service/details`
+  -> To get the details of a particular service
 POST `/api/v1/service/register`
-POST `/api/v1/service/register/:role`
-  -> this "role" comes from the frontend, depending on this "role" we'll add them to the document
+  -> To add a new service
 PATCH `/api/v1/service/edit`
+  -> To edit the details of a user
 DELETE `/api/v1/service/delete`
+  -> To delete the details of a service
 
 SEARCHING FUNCTIONALITY
 
-GET `/api/v1/search/:role`
-  the search params for the above would be
-  - country
-  - state
-  - division
-  - district
+POST `/api/v1/search/
+  -> POST request, as we need to provide more data to the particular search query
 
-GET `/api/v1/search/:role/:radius`
-  The permitted radius would be 5km by default
-  Depending on the amount paied by the customer then it'll be
-  - 10KM
-  - 15KM
-  - 20KM
+POST `/api/v1/search/:role/:radius` => Not yet implemented
 
 SERVICE-REVIEWS
 
-POST `/api/v1/review/:username`
+POST `/api/v1/review/`
   - To post a review of a particular user
+
 GET `/api/v1/getreviews/:username`
   - To get all the reviews of a particular user
-
-
-NOTES
-
-Now, we're gonna be creating multiple collections for each of the different blue-collar services that are going to be provided. This can be done by using another async function which again calls this await function.
-Also, we do understand the process of user data duplication, as we're just trying to provide a prototype we'll carry on with the following, in the future we'll prevent data duplication.

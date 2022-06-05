@@ -6,7 +6,7 @@ const {
   searchServiceRadius 
 } = require("../controllers/searchController")
 
-router.route("/:role").get(searchServiceName)
+router.route("/").post(searchServiceName);
 router.route("/:role/:radius").get(searchServiceRadius)
 
 module.exports = router;

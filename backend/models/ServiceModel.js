@@ -35,7 +35,7 @@ const serviceSchema = new mongoose.Schema({
 	},
 	companyName: {
 		type: String,
-		required: [true, "The Name ofthe company is a required field"],
+		required: [true, "The Name of the company is a required field"],
 		maxlength: [100, "The Name of the company must not exceed 100 characters"],
 	},
 	servicesOffered: {
