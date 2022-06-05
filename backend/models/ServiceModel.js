@@ -3,7 +3,7 @@ const validator_ = require("validator");
 
 // password field needs to be added
 const serviceSchema = new mongoose.Schema({
-	userName: {
+	username: {
 		type: String,
 		required: [true, "Username is a required field"],
 		maxlength: [20, "Username cannot exceed 20 characters"],
@@ -13,7 +13,7 @@ const serviceSchema = new mongoose.Schema({
 				return /^\w+$/.test(v);
 			},
 			message: (props) =>
-				`${props.value} is not a valid user name. UserNames should only be alphabets, numbers and underscore.`,
+				`${props.value} is not a valid user name. Usernames should only be alphabets, numbers and underscore.`,
 		},
 		unique: true,
 	},
@@ -33,6 +33,11 @@ const serviceSchema = new mongoose.Schema({
 			maxlength: [20, "Third Name cannot exceed 20 characters"],
 		},
 	},
+	companyName: {
+		type: String,
+		required: [true, "The Name ofthe company is a required field"],
+		maxlength: [100, "The Name of the company must not exceed 100 characters"],
+	},
 	mobileNumber: {
 		type: String,
 		required: [true, "Mobile Number is a required field"],
@@ -46,6 +51,7 @@ const serviceSchema = new mongoose.Schema({
 		type: String,
 		required: [true, "Mail ID is a required field"],
 		validate: [validator_.isEmail, "Please enter a valid Email"],
+		unique: true,
 	},
 	address: {
 		type: String,
@@ -76,17 +82,17 @@ const serviceSchema = new mongoose.Schema({
 		},
 	},
 	serviceImages: [
-    {
-      public_id: {
-        type: String,
-        required: true,
-      },
-      url: {
-        type: String,
-        required: true,
-      },
-    },
-  ],
+		{
+			public_id: {
+				type: String,
+				required: true,
+			},
+			url: {
+				type: String,
+				required: true,
+			},
+		},
+	],
 });
 
 module.exports.Electrician = mongoose.model("Electrician", serviceSchema);

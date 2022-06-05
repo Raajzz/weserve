@@ -3,7 +3,7 @@ const validator = require("validator");
 
 // password field needs to be added
 const userSchema = new mongoose.Schema({
-	userName: {
+	username: {
 		type: String,
 		required: [true, "Username is a required field"],
 		maxlength: [20, "Username cannot exceed 20 characters"],
@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
 				return /^\w+$/.test(v);
 			},
 			message: (props) =>
-				`${props.value} is not a valid user name. UserNames should only be alphabets, numbers and underscore.`,
+				`${props.value} is not a valid user name. Usernames should only be alphabets, numbers and underscore.`,
 		},
 		unique: true,
 	},
@@ -46,6 +46,7 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		required: [true, "Mail ID is a required field"],
 		validate: [validator.isEmail, "Please enter a valid Email"],
+		unique: true,
 	},
 	address: {
 		type: String,
@@ -77,5 +78,4 @@ const userSchema = new mongoose.Schema({
 	},
 });
 
-module.exports.User = mongoose.model("User", userSchema);
-module.exports.User2 = mongoose.model("User2", userSchema);
+module.exports = mongoose.model("User", userSchema);

@@ -1,9 +1,10 @@
 USER
 
-GET `/api/v1/user/details`
+GET `/api/v1/user/alldetails`
+GET `/api/v1/user/details/:username`
 POST `/api/v1/user/register`
-PATCH `/api/v1/user/edit`
-DELETE `/api/v1/user/delete`
+PATCH `/api/v1/user/edit/:username`
+DELETE `/api/v1/user/delete/:username`
 
 SERVICE
 
@@ -29,6 +30,14 @@ GET `/api/v1/search/:role/:radius`
   - 10KM
   - 15KM
   - 20KM
+
+SERVICE-REVIEWS
+
+POST `/api/v1/review/:username`
+  - To post a review of a particular user
+GET `/api/v1/getreviews/:username`
+  - To get all the reviews of a particular user
+
 
 NOTES
 
