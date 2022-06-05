@@ -6,6 +6,7 @@ const {
 	postReview,
 } = require("../controllers/serviceReviewController");
 
-router.route("/:username").get(getReviews).post(postReview);
+router.route("/:username").get(getReviews);
+router.route("/").post(postReview);
 
 module.exports = router;

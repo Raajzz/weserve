@@ -14,9 +14,8 @@ const ServiceReviewSchema = mongoose.Schema({
 			message: (props) =>
 				`${props.value} is not a valid user name. Usernames should only be alphabets, numbers and underscore.`,
 		},
-		unique: true,
 	},
-	reviews: {
+	review: {
 		// username of the reviewer, filled automatically by the frontend
 		username: {
 			type: String,
@@ -30,7 +29,6 @@ const ServiceReviewSchema = mongoose.Schema({
 				message: (props) =>
 					`${props.value} is not a valid user name. Usernames should only be alphabets, numbers and underscore.`,
 			},
-			unique: true,
 		},
 		rating: {
 			type: Number,
