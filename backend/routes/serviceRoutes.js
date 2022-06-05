@@ -9,10 +9,10 @@ const {
 	deleteService,
 } = require("../controllers/serviceController");
 
-router.route("/alldetails").get(getAllService)
-router.route("/details/:id").get(getService);
+router.route("/alldetails").get(getAllService);
+router.route("/details/:username").get(getService);
 router.route("/register").post(registerService);
-router.route("/edit/:id").patch(editService);
-router.route("/delete/:id").delete(deleteService);
+router.route("/edit/:username").patch(editService);
+router.route("/delete/:username").delete(deleteService);
 
 module.exports = router;

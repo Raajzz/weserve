@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const validator_ = require("validator");
+const validator = require("validator");
 
 // password field needs to be added
 const serviceSchema = new mongoose.Schema({
@@ -38,19 +38,23 @@ const serviceSchema = new mongoose.Schema({
 		required: [true, "The Name ofthe company is a required field"],
 		maxlength: [100, "The Name of the company must not exceed 100 characters"],
 	},
+	servicesOffered: {
+		type: [String],
+		required: [true, "Must provide atleast one service"],
+	},
 	mobileNumber: {
 		type: String,
 		required: [true, "Mobile Number is a required field"],
 		unique: true,
 		validate: [
-			validator_.isMobilePhone,
+			validator.isMobilePhone,
 			"Please enver a valid mobile phone number",
 		],
 	},
 	mailId: {
 		type: String,
 		required: [true, "Mail ID is a required field"],
-		validate: [validator_.isEmail, "Please enter a valid Email"],
+		validate: [validator.isEmail, "Please enter a valid Email"],
 		unique: true,
 	},
 	address: {
@@ -74,11 +78,9 @@ const serviceSchema = new mongoose.Schema({
 	coverPhoto: {
 		publicId: {
 			type: String,
-			required: true,
 		},
 		url: {
 			type: String,
-			required: true,
 		},
 	},
 	serviceImages: [
@@ -95,8 +97,4 @@ const serviceSchema = new mongoose.Schema({
 	],
 });
 
-module.exports.Electrician = mongoose.model("Electrician", serviceSchema);
-module.exports.Plumber = mongoose.model("Plumber", serviceSchema);
-module.exports.Carpenter = mongoose.model("Carpenter", serviceSchema);
-module.exports.Painter = mongoose.model("Painter", serviceSchema);
-module.exports.TvRepair = mongoose.model("TvRepair", serviceSchema);
+module.exports = mongoose.model("Service", serviceSchema);
