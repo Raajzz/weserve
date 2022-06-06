@@ -1,0 +1,46 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card-container{
+  background-color: whitesmoke;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Pacifico', cursive;
+  font-size: 6vw;
+}
+
+.user-card{
+  width: 50%;
+  height: 30%;
+  background-color: #BCE43E;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-card{
+  width: 50%;
+  height: 30%;
+  background-color: #F08DA9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-register-link{
+  text-decoration: none;
+  color: rgb(80, 80, 80);
+}
+
+.service-register-link{
+  text-decoration: none;
+  color: rgb(80, 80, 80);
+}

@@ -1,0 +1,70 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card-container{
+  background-color: whitesmoke;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  background-color: #fee3b8;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px 0;
+}
+
+
+.card > * {
+  width: 70%;
+  margin: 10px auto;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.username{
+  padding: 10px;
+  border: none;
+}
+
+.password{
+  padding: 10px;
+  border: none;
+}
+
+.register-btn{
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+}
+
+.login-btn, .register-btn{
+  padding: 10px;
+  background-color: #A6DAE8; 
+  cursor: pointer;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.login-btn:hover, .register-btn:hover{
+  background-color: #56c4e2; 
+  transition: ease;
+  transition-duration: 150ms;
+}
+
+.already-question{
+  text-align: center;
+  font-style: italic;
+  color: #00b8ea;
+}
+
