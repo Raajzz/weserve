@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 5000;
 
 const startApplication = async () => {
 	try {
-		await mongooseConnect(process.env.MONGO_URI);
+		await mongooseConnect(process.env.MONGO_URI_CLOUD);
 		app.listen(PORT, () => {
 			console.log("app is listening on port 5000");
 		});
